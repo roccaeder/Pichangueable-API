@@ -1,6 +1,8 @@
 class CreateFields < ActiveRecord::Migration[6.1]
   def change
     create_table :fields do |t|
+      t.string :name
+      t.string :sport_type
       t.string :field_type
       t.integer :capacity
       t.text :summary

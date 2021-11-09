@@ -16,6 +16,8 @@ ActiveRecord::Schema.define(version: 2021_11_09_152709) do
   enable_extension "plpgsql"
 
   create_table "fields", force: :cascade do |t|
+    t.string "name"
+    t.string "sport_type"
     t.string "field_type"
     t.integer "capacity"
     t.text "summary"
