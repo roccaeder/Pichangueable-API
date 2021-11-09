@@ -1,4 +1,5 @@
 class Field < ApplicationRecord
+  has_many_attached :images
   belongs_to :user # required: true
   belongs_to :ubication # required: true
   has_many :reviews, dependent: :destroy
