@@ -7,8 +7,8 @@ class User < ApplicationRecord
   has_many :reviews, dependent: :destroy
   has_many :fields, dependent: :destroy
 
-  validates :name, presence: true, format: { with: URI::MailTo::EMAIL_REGEXP }
-  validates :email, presence: true
+  validates :name, presence: true
+  validates :email, presence: true, format: { with: URI::MailTo::EMAIL_REGEXP }
 
   enum role: {
     user: 0,
