@@ -60,9 +60,9 @@ ActiveRecord::Schema.define(version: 2021_11_09_152709) do
 
   create_table "users", force: :cascade do |t|
     t.string "name"
-    t.string "email"
+    t.string "email", default: "", null: false
     t.string "phone"
-    t.string "user_type"
+    t.integer "role"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "encrypted_password", default: "", null: false
