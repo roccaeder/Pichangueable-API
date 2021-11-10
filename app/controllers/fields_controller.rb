@@ -1,7 +1,7 @@
 class FieldsController < ApplicationController
   def index
-    @fields = fields.all
-    render json @fields
+    @fields = Field.all
+    render json: @fields
   end
 
   # new field
@@ -10,7 +10,8 @@ class FieldsController < ApplicationController
   end
 
   def show
-    render json: current_field
+    field = Field.where(id: params[:id])
+    render json: field
   end
 
   def update
