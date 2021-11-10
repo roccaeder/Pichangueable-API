@@ -32,6 +32,9 @@ Layout/LineLength:
   Max: 100
   IgnoredPatterns: ['\s*#']
 
+Layout/EndOfLine:
+  Enabled: False
+
 Metrics/BlockLength:
   Exclude:
     - config/**/*
