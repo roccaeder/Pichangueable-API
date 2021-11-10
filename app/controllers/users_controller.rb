@@ -3,7 +3,8 @@ class UsersController < ApplicationController
 
   # get profile
   def show
-    render json: current_user
+    user = User.where(id: params[:id])
+    render json: user
   end
 
   # sign up

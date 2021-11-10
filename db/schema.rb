@@ -44,6 +44,8 @@ ActiveRecord::Schema.define(version: 2021_11_09_164055) do
   end
 
   create_table "fields", force: :cascade do |t|
+    t.string "name"
+    t.string "sport_type"
     t.string "field_type"
     t.integer "capacity"
     t.text "summary"
@@ -74,9 +76,11 @@ ActiveRecord::Schema.define(version: 2021_11_09_164055) do
     t.integer "rating"
     t.text "comment"
     t.bigint "field_id", null: false
+    t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["field_id"], name: "index_reviews_on_field_id"
+    t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 
   create_table "ubications", force: :cascade do |t|
@@ -108,4 +112,5 @@ ActiveRecord::Schema.define(version: 2021_11_09_164055) do
   add_foreign_key "reservations", "fields"
   add_foreign_key "reservations", "users"
   add_foreign_key "reviews", "fields"
+  add_foreign_key "reviews", "users"
 end
