@@ -1,10 +1,3 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
 User.destroy_all
 Ubication.destroy_all
 Field.destroy_all
@@ -41,29 +34,29 @@ ubications.each do |ubication|
 end
 puts "End seeding Users"
 fields = [
-        {name: 'La Once',sport_type:'soccer', field_type: 'grass', capacity: 12,
+        {name: 'Full vaso',sport_type:'soccer', field_type: 'grass', capacity: 12,
         summary:'Esta es una cancha de grass ubicada en Los
-        Angeles', price_hour: 16, published_at: '2021/11/06',
-        address: 'Jr Los Angeles 367'},
+        Angeles', price_hour: 16, published_at:  rand(4.week.ago..Time.now),
+        address: 'Jr Los Angeles 367', images: ["cancha1.jpg", "cancha2.jpeg", "cancha2.jpg"]},
         {name: 'All Sport',sport_type:'soccer', field_type: 'sintetic', capacity: 9,
-        summary:'Esta es una canch.... ', price_hour: 35, published_at: '2021/10/31' ,
-        address: 'Jr Los Angeles 367'},
+        summary:'Esta es una canch.... ', price_hour: 35, published_at: rand(4.week.ago..Time.now) ,
+        address: 'Jr Los Angeles 367', images: ["cancha3.jpg", "cancha4.jpg", "cancha55.jpg"]},
         {name: 'Tu canchita',sport_type:'soccer', field_type: 'grass', capacity: 20,
-        summary:'Esta es la cancha más grandede la region', price_hour: 50, published_at: '2021/11/03' ,
-        address: 'Jr La Rosa 367'},
+        summary:'Esta es la cancha más grandede la region', price_hour: 50, published_at: rand(4.week.ago..Time.now) ,
+        address: 'Jr La Rosa 367', images: ["cancha5.jpg", "cancha6.jpg", "cancha7.jpg"]},
         {name: 'Tu pelotita',sport_type:'soccer', field_type: 'sintetic', capacity: 10,
-        summary:'Esta es una.....', price_hour: 27, published_at: '2021/11/09' ,
-        address: 'Av el sol 360'},
-        {name: 'La ocho',sport_type:'tennis', field_type: 'arcilla', capacity: 4,
+        summary:'Esta es una.....', price_hour: 27, published_at: rand(4.week.ago..Time.now),
+        address: 'Av el sol 360', images: ["cancha22.jpeg", "cancha11.jpg", "cancha8.jpg"]},
+        {name: 'La Once',sport_type:'tennis', field_type: 'arcilla', capacity: 4,
         summary:'Esta es una cancha de teennis muy comoda para jugar',
-        price_hour: 50, published_at: '2021/07/26' ,
-        address: 'Jr Ceramicas 7'},
+        price_hour: 50, published_at: rand(4.week.ago..Time.now) ,
+        address: 'Jr Ceramicas 7', images: ["tenis1.jpg", "tenis2.jpg", "tenis3.jpg"]},
         {name: 'La Diez',sport_type:'soccer', field_type: 'grass', capacity: 10,
-        summary:'Esta es una cancha de ... s', price_hour: 16, published_at: '2021/11/06' ,
-        address: 'Av Los Claveles 7'},
+        summary:'Esta es una cancha de ... s', price_hour: 16, published_at: rand(4.week.ago..Time.now) ,
+        address: 'Av Los Claveles 7', images: ["cancha33.jpg", "cancha44.jpg", "cancha88.jpg"]},
         {name: 'La catorce',sport_type:'tennis', field_type: 'arcilla', capacity: 4,
-        summary:'Esta es una cancha de ...', price_hour: 40, published_at: '2021/05/02' ,
-        address: 'Jr Barra brava 12'}]
+        summary:'Esta es una cancha de ...', price_hour: 40, published_at: rand(4.week.ago..Time.now) ,
+        address: 'Jr Barra brava 12', images: ["tenis4.jpg", "tenis5.jpg"]}]
 users=User.all
 ubications = Ubication.all
 puts "Start seeding Field"
@@ -71,7 +64,8 @@ puts "Start seeding Field"
     user = users.sample
     ubication = ubications.sample
     field_item_data =
-    {name: field[:name],
+    {
+      name: field[:name],
      sport_type: field[:sport_type],
      field_type:  field[:field_type],
      capacity: field[:capacity],
@@ -81,29 +75,11 @@ puts "Start seeding Field"
      address: field[:address],
      user: user,
      ubication: ubication
-     }
-    Field.create(field_item_data)
-  end
-puts "End seeding Field"
-users=User.all
-ubications = Ubication.all
-puts "Start seeding Field"
-  fields.each do |field|
-    user = users.sample
-    ubication = ubications.sample
-    field_item_data =
-    {name: field[:name],
-     sport_type: field[:sport_type],
-     field_type:  field[:field_type],
-     capacity: field[:capacity],
-     summary: field[:summary],
-     price_hour: field[:price_hour],
-     published_at: field[:published_at],
-     address: field[:address],
-     user: user,
-     ubication: ubication
-     }
-    Field.create(field_item_data)
+    }
+    p = Field.create(field_item_data)
+    field[:images].each do |image|
+      p.images.attach(io: File.open(Rails.root.join("app/assets/images/#{image}")), filename: "#{image}")
+    end
   end
 puts "End seeding Field"
 users=User.all
