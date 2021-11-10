@@ -4,7 +4,7 @@ class Review < ApplicationRecord
 
   validates :comment, length: { maximum: 500 }
   validates :field_id, presence: true
-  validates :validate_rating
+  validate :validate_rating
 
   def validate_rating
     return unless rating
