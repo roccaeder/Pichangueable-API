@@ -7,6 +7,11 @@ class FieldsController < ApplicationController
   # new field
   def create
     @field = Field.new(field_params)
+    if @field.save
+      render json: @field
+    else
+      render json: @field.errors, status: :unprocessable_entity
+    end
   end
 
   def show
