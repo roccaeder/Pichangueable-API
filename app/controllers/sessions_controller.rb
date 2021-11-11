@@ -1,8 +1,6 @@
 class SessionsController < ApplicationController
-  # prepend_before_filter :require_no_authentication, only: [:create]
-  # include Devise::InternalHelpers
+  skip_before_action :require_login, only: :create
 
-  # before_filter :ensure_params_exist
   def create
     user = User.find_by(email: params[:email])
     if user.valid_password?(params[:password])

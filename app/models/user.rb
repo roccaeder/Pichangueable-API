@@ -3,6 +3,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_secure_token
+
   has_many :reservations, dependent: :destroy
   has_many :reviews, dependent: :destroy
   has_many :fields, dependent: :destroy
@@ -14,4 +15,8 @@ class User < ApplicationRecord
     user: 0,
     admin: 1
   }
+
+  def invalidate_token
+    update(token: nil)
+  end
 end
