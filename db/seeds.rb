@@ -37,7 +37,7 @@ fields = [
         {name: 'Full vaso',sport_type:'soccer', field_type: 'grass', capacity: 12,
         summary:'Esta es una cancha de grass ubicada en Los
         Angeles', price_hour: 16, published_at:  rand(4.week.ago..Time.now),
-        address: 'Jr Los Angeles 367', images: ["cancha1.jpg", "cancha2.jpeg", "cancha2.jpg"]},
+        address: 'Jr Los Angeles 367', images: ["cancha1.jpg", "cancha2.jpg"]},
         {name: 'All Sport',sport_type:'soccer', field_type: 'sintetic', capacity: 9,
         summary:'Esta es una canch.... ', price_hour: 35, published_at: rand(4.week.ago..Time.now) ,
         address: 'Jr Los Angeles 367', images: ["cancha3.jpg", "cancha4.jpg", "cancha55.jpg"]},
@@ -46,7 +46,7 @@ fields = [
         address: 'Jr La Rosa 367', images: ["cancha5.jpg", "cancha6.jpg", "cancha7.jpg"]},
         {name: 'Tu pelotita',sport_type:'soccer', field_type: 'sintetic', capacity: 10,
         summary:'Esta es una.....', price_hour: 27, published_at: rand(4.week.ago..Time.now),
-        address: 'Av el sol 360', images: ["cancha22.jpeg", "cancha11.jpg", "cancha8.jpg"]},
+        address: 'Av el sol 360', images: [ "cancha11.jpg", "cancha8.jpg"]},
         {name: 'La Once',sport_type:'tennis', field_type: 'arcilla', capacity: 4,
         summary:'Esta es una cancha de teennis muy comoda para jugar',
         price_hour: 50, published_at: rand(4.week.ago..Time.now) ,
