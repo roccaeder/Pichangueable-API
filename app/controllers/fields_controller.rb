@@ -1,6 +1,7 @@
 class FieldsController < ApplicationController
   # before_action :require_login % i[index]
-  before_action :require_login
+  before_action :require_login, except: %i[index]
+
   def index
     @fields = Field.all
     render json: @fields
