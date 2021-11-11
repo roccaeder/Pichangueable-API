@@ -5,9 +5,9 @@ class UsersController < ApplicationController
 
   # before_action :require_login, except: %i[create]
 
-  def show
-    user = User.find(params[:id])
-    render json: user
+  def index
+    # user = User.find(params[:id])
+    render json: current_user
   end
 
   # sign up

@@ -1,16 +1,23 @@
 class ReviewsController < ApplicationController
+  before_action :require_login, except: %i[index]
+
   def index
-    @reviews = Review.all
+    field = Field.find(params[:field_id])
+    @reviews = field.reviews
     render json: @reviews
   end
 
   def show
-    @review = Review.find(params[:id])
+    field = Field.find(params[:field_id])
+    @review = field.reviews
     render json: @review
   end
 
   def create
     @review = Review.new(review_params)
+    @review.user_id = current_user.id
+    @review.field_id = params[:field_id]
+
     if @review.save
       render json: @review
     else
@@ -20,13 +27,12 @@ class ReviewsController < ApplicationController
 
   def edit
     @review = Review.find(params[:id])
-    authorize @review
   end
 
   def destroy
     @review = Review.find(params[:id])
     @review.destroy
-    authorize @review
+    head :no_content
   end
 
   # def update
@@ -38,6 +44,6 @@ class ReviewsController < ApplicationController
   private
 
   def review_params
-    params.require(:review).permit(:comment, :user_id, :rating, :field_id)
+    params.require(:review).permit(:comment, :rating)
   end
 end

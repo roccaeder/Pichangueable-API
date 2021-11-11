@@ -15,6 +15,7 @@ class ReservationsController < ApplicationController
   def create
     @reservation = Reservation.new(reservation_params)
     if previus_reservation_exists(@reservation).empty?
+      @reservation.user_id = current_user.id
       @reservation.save
       render json: @reservation
     else
@@ -27,6 +28,7 @@ class ReservationsController < ApplicationController
     @reservation = Reservation.find(params[:id])
     validreservation = Reservation.new(reservation_params)
     if previus_reservation_exists(validreservation).empty?
+      reservation_params.user_id = current_user.id
       @reservation.update(reservation_params)
       render json: @reservation
     else
@@ -52,8 +54,7 @@ class ReservationsController < ApplicationController
   end
 
   def reservation_params
-    params.require(:reservation).permit(:start_date_hour, :end_date_hour, :total, :user_id,
-                                        :field_id)
+    params.require(:reservation).permit(:start_date_hour, :end_date_hour, :total, :field_id)
   end
 end
 
