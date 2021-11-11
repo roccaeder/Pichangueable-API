@@ -1,9 +1,12 @@
 class UsersController < ApplicationController
-  # skip_before_action :require_login!, only: :create
+  skip_before_action :require_login, only: :create
 
   # get profile
+
+  # before_action :require_login, except: %i[create]
+
   def show
-    user = User.where(id: params[:id])
+    user = User.find(params[:id])
     render json: user
   end
 
@@ -12,7 +15,8 @@ class UsersController < ApplicationController
     user = User.new(user_params)
 
     if user.save
-      render json: { id: user.id, email: user.email, token: user.token }, status: :created
+      # render json: { id: user.id, email: user.email, token: user.token }, status: :created
+      render json: user, status: :created
     else
       render json: { errors: user.errors.full_messages }, status: :unprocessable_entity
     end
@@ -30,13 +34,16 @@ class UsersController < ApplicationController
 
   # delete user
   def destroy
-    delegate :destroy, to: :current_user
+    user = User.find(params[:id])
+    user.destroy
+
+    render json: { messages: "Deleted" }
   end
 
   private
 
   # Only allow a trusted parameter "white list" through.
   def user_params
-    params.permit(:email, :password)
+    params.permit(:email, :password, :name, :phone, :role)
   end
 end
