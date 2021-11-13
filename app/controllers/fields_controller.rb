@@ -28,6 +28,7 @@ class FieldsController < ApplicationController
   end
 
   def update
+    @field = Field.find(params[:id])
     if @field.update(field_params)
       render json: @field
     else
