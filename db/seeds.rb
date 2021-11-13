@@ -36,7 +36,7 @@ puts "End seeding Users"
 fields = [
         {name: 'Full vaso',sport_type:'soccer', field_type: 'grass', capacity: 12,
         summary:'Unfortunately this sport and recreation facility currently does offer instant online booking via  To speak with a member of staff at Whitechapel Sports Centre about the rental of their facilities, you will need to reach out directly via the contact details we have listed for Whitechapel Sports Centre, 55 Durward Street, London, E1 5BA.', price_hour: 16, published_at:  rand(4.week.ago..Time.now),
-        address: 'Jr Coordialidad 1893', images: ["cancha1.jpg", "cancha2.jpeg", "cancha2.jpg"]},
+        address: 'Jr Coordialidad 1893', images: ["cancha1.jpg", "cancha2.jpg"]},
         {name: 'All Sport',sport_type:'soccer', field_type: 'sintetic', capacity: 9,
         summary:'Unfortunately this sport and recreation facility currently does offer instant online booking via  To speak with a member of staff at Whitechapel Sports Centre about the rental of their facilities, you will need to reach out directly via the contact details we have listed for Whitechapel Sports Centre, 55 Durward Street, London, E1 5BA.', price_hour: 35, published_at: rand(4.week.ago..Time.now) ,
         address: 'Jr Amabilidad 367', images: ["cancha3.jpg", "cancha4.jpg", "cancha55.jpg"]},
@@ -45,7 +45,7 @@ fields = [
         address: 'Jr Honestidad 4521', images: ["cancha5.jpg", "cancha6.jpg", "cancha7.jpg"]},
         {name: 'Tu pelotita',sport_type:'soccer', field_type: 'sintetic', capacity: 10,
         summary:'Unfortunately this sport and recreation facility currently does offer instant online booking via  To speak with a member of staff at Whitechapel Sports Centre about the rental of their facilities, you will need to reach out directly via the contact details we have listed for Whitechapel Sports Centre, 55 Durward Street, London, E1 5BA.', price_hour: 27, published_at: rand(4.week.ago..Time.now),
-        address: 'Av Indescente 999', images: ["cancha22.jpeg", "cancha11.jpg", "cancha8.jpg"]},
+        address: 'Av Indescente 999', images: ["cancha11.jpg", "cancha8.jpg"]},
         {name: 'La Once',sport_type:'tennis', field_type: 'arcilla', capacity: 4,
         summary:'Unfortunately this sport and recreation facility currently does offer instant online booking via  To speak with a member of staff at Whitechapel Sports Centre about the rental of their facilities, you will need to reach out directly via the contact details we have listed for Whitechapel Sports Centre, 55 Durward Street, London, E1 5BA.',
         price_hour: 50, published_at: rand(4.week.ago..Time.now) ,
