@@ -35,28 +35,27 @@ end
 puts "End seeding Users"
 fields = [
         {name: 'Full vaso',sport_type:'soccer', field_type: 'grass', capacity: 12,
-        summary:'Esta es una cancha de grass ubicada en Los
-        Angeles', price_hour: 16, published_at:  rand(4.week.ago..Time.now),
-        address: 'Jr Los Angeles 367', images: ["cancha1.jpg", "cancha2.jpeg", "cancha2.jpg"]},
+        summary:'Unfortunately this sport and recreation facility currently does offer instant online booking via  To speak with a member of staff at Whitechapel Sports Centre about the rental of their facilities, you will need to reach out directly via the contact details we have listed for Whitechapel Sports Centre, 55 Durward Street, London, E1 5BA.', price_hour: 16, published_at:  rand(4.week.ago..Time.now),
+        address: 'Jr Coordialidad 1893', images: ["cancha1.jpg", "cancha2.jpeg", "cancha2.jpg"]},
         {name: 'All Sport',sport_type:'soccer', field_type: 'sintetic', capacity: 9,
-        summary:'Esta es una canch.... ', price_hour: 35, published_at: rand(4.week.ago..Time.now) ,
-        address: 'Jr Los Angeles 367', images: ["cancha3.jpg", "cancha4.jpg", "cancha55.jpg"]},
+        summary:'Unfortunately this sport and recreation facility currently does offer instant online booking via  To speak with a member of staff at Whitechapel Sports Centre about the rental of their facilities, you will need to reach out directly via the contact details we have listed for Whitechapel Sports Centre, 55 Durward Street, London, E1 5BA.', price_hour: 35, published_at: rand(4.week.ago..Time.now) ,
+        address: 'Jr Amabilidad 367', images: ["cancha3.jpg", "cancha4.jpg", "cancha55.jpg"]},
         {name: 'Tu canchita',sport_type:'soccer', field_type: 'grass', capacity: 20,
-        summary:'Esta es la cancha más grandede la region', price_hour: 50, published_at: rand(4.week.ago..Time.now) ,
-        address: 'Jr La Rosa 367', images: ["cancha5.jpg", "cancha6.jpg", "cancha7.jpg"]},
+        summary:'Unfortunately this sport and recreation facility currently does offer instant online booking via  To speak with a member of staff at Whitechapel Sports Centre about the rental of their facilities, you will need to reach out directly via the contact details we have listed for Whitechapel Sports Centre, 55 Durward Street, London, E1 5BA.', price_hour: 50, published_at: rand(4.week.ago..Time.now) ,
+        address: 'Jr Honestidad 4521', images: ["cancha5.jpg", "cancha6.jpg", "cancha7.jpg"]},
         {name: 'Tu pelotita',sport_type:'soccer', field_type: 'sintetic', capacity: 10,
-        summary:'Esta es una.....', price_hour: 27, published_at: rand(4.week.ago..Time.now),
-        address: 'Av el sol 360', images: ["cancha22.jpeg", "cancha11.jpg", "cancha8.jpg"]},
+        summary:'Unfortunately this sport and recreation facility currently does offer instant online booking via  To speak with a member of staff at Whitechapel Sports Centre about the rental of their facilities, you will need to reach out directly via the contact details we have listed for Whitechapel Sports Centre, 55 Durward Street, London, E1 5BA.', price_hour: 27, published_at: rand(4.week.ago..Time.now),
+        address: 'Av Indescente 999', images: ["cancha22.jpeg", "cancha11.jpg", "cancha8.jpg"]},
         {name: 'La Once',sport_type:'tennis', field_type: 'arcilla', capacity: 4,
-        summary:'Esta es una cancha de teennis muy comoda para jugar',
+        summary:'Unfortunately this sport and recreation facility currently does offer instant online booking via  To speak with a member of staff at Whitechapel Sports Centre about the rental of their facilities, you will need to reach out directly via the contact details we have listed for Whitechapel Sports Centre, 55 Durward Street, London, E1 5BA.',
         price_hour: 50, published_at: rand(4.week.ago..Time.now) ,
-        address: 'Jr Ceramicas 7', images: ["tenis1.jpg", "tenis2.jpg", "tenis3.jpg"]},
+        address: 'Jr Las coquetas 2476', images: ["tenis1.jpg", "tenis2.jpg", "tenis3.jpg"]},
         {name: 'La Diez',sport_type:'soccer', field_type: 'grass', capacity: 10,
-        summary:'Esta es una cancha de ... s', price_hour: 16, published_at: rand(4.week.ago..Time.now) ,
-        address: 'Av Los Claveles 7', images: ["cancha33.jpg", "cancha44.jpg", "cancha88.jpg"]},
+        summary:'Unfortunately this sport and recreation facility currently does offer instant online booking via  To speak with a member of staff at Whitechapel Sports Centre about the rental of their facilities, you will need to reach out directly via the contact details we have listed for Whitechapel Sports Centre, 55 Durward Street, London, E1 5BA.', price_hour: 16, published_at: rand(4.week.ago..Time.now) ,
+        address: 'Av Los Infieles 7', images: ["cancha33.jpg", "cancha44.jpg", "cancha88.jpg"]},
         {name: 'La catorce',sport_type:'tennis', field_type: 'arcilla', capacity: 4,
-        summary:'Esta es una cancha de ...', price_hour: 40, published_at: rand(4.week.ago..Time.now) ,
-        address: 'Jr Barra brava 12', images: ["tenis4.jpg", "tenis5.jpg"]}]
+        summary:'Unfortunately this sport and recreation Unfortunately this sport and recreation Unfortunately this sport and recreation ', price_hour: 40, published_at: rand(4.week.ago..Time.now) ,
+        address: 'Jr Pureza 1266', images: ["tenis4.jpg", "tenis5.jpg"]}]
 users=User.all
 ubications = Ubication.all
 puts "Start seeding Field"
