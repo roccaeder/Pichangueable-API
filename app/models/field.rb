@@ -10,7 +10,7 @@ class Field < ApplicationRecord
   # has_many :field_images, dependent: :destroy
 
   validates :field_type, presence: true
-  validates :summary, length: { maximum: 140 }
+  validates :summary, presence: true
   validates :user_id, presence: true
   validates :price_hour, presence: true
   validates :ubication_id, presence: true

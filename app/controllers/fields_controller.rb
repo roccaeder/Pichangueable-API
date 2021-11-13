@@ -9,7 +9,7 @@ class FieldsController < ApplicationController
 
   # new field
   def create
-    @field = Field.new(field_params)
+    @field = Field.new(field_params_create)
     @field.user_id = current_user.id
     if @field.save
       render json: @field
@@ -29,11 +29,13 @@ class FieldsController < ApplicationController
 
   def update
     @field = Field.find(params[:id])
-    if @field.update(field_params)
+    if @field.update(field_params_update)
+      @field.images.attach(params[:images])
       render json: @field
     else
       render json: @field.errors, status: :unprocessable_entity
     end
+    # render json: params[:images]
   end
 
   def destroy
@@ -43,8 +45,17 @@ class FieldsController < ApplicationController
 
   private
 
-  def field_params
+  def field_params_create
     params.permit(:name, :summary, :field_type, :sport_type, :address, :capacity, :price_hour,
                   :images, :ubication_id, :published_at)
+  end
+
+  def field_params_update
+    params.permit(:name, :summary, :field_type, :sport_type, :address, :capacity, :price_hour,
+                  :ubication_id, :published_at)
+  end
+
+  def images_data
+    params.permit(:images)
   end
 end
