@@ -54,7 +54,7 @@ fields = [
         summary:'Unfortunately this sport and recreation facility currently does offer instant online booking via  To speak with a member of staff at Whitechapel Sports Centre about the rental of their facilities, you will need to reach out directly via the contact details we have listed for Whitechapel Sports Centre, 55 Durward Street, London, E1 5BA.', price_hour: 16, published_at: rand(4.week.ago..Time.now) ,
         address: 'Av Los Infieles 7', images: ["cancha33.jpg", "cancha44.jpg", "cancha88.jpg"]},
         {name: 'La catorce',sport_type:'tennis', field_type: 'arcilla', capacity: 4,
-        summary:'Unfortunately this sport and recreation Unfortunately this sport and recreation Unfortunately this sport and recreation ', price_hour: 40, published_at: rand(4.week.ago..Time.now) ,
+        summary:'Unfortunately this sport and recreation facility currently does offer instant online booking via  To speak with a member of staff at Whitechapel Sports Centre about the rental of their facilities, you will need to reach out directly via the contact details we have listed for Whitechapel Sports Centre, 55 Durward Street, London, E1 5BA.', price_hour: 40, published_at: rand(4.week.ago..Time.now) ,
         address: 'Jr Pureza 1266', images: ["tenis4.jpg", "tenis5.jpg"]}]
 users=User.all
 ubications = Ubication.all
